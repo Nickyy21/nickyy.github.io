@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet My Family</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the video */
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensures the video covers the viewport */
+            z-index: -1;
+        }
+
+        /* Header Animation */
+        @keyframes moveHeader {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            color: #ffcba4;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 50px;
+            animation: moveHeader 2s infinite ease-in-out;
+        }
+
+        /* Family Section */
+        .family-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .family-card {
+            background-color: #ffcba4;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .family-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .family-card h3 {
+            margin: 15px 0 5px;
+            font-size: 22px;
+            color: orange;
+        }
+
+        .family-card p {
+            margin: 10px;
+            color: orange;
+            font-size: 16px;
+        }
+
+        .family-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+	/* Clock Box Styling */
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ffcba4;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Footer Section */
+        footer {
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #779ecb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="video/sunsetz.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header Section -->
+    <header>
+        The heart of my world
+    </header>
+
+    <!-- Family Members Section -->
+    <section class="family-section">
+        <!-- Example Card for Each Family Member -->
+        <div class="family-card">
+            <img src="images/dad.jpg" alt="Dad">
+            <h3>Dad</h3>
+            <p>Meet my <sub>father</sub>! He is the best father in the world. Strong yet gentle. A true role model!</p>
+        </div>
+        <div class="family-card">
+            <img src="images/mom.jpg" alt="Mom">
+            <h3>Mom</h3>
+            <p>This is my <sub>mother</sub>!. My biggest supporter and cheerleader. She's the heart of our family. The best mother of all time. Always there with open arms.</p>
+        </div>
+        <div class="family-card">
+            <img src="images/bey.jpg" alt="Sibling">
+            <h3>Old Brother</h3>
+            <p>My <sub>Brother</sub>! Always ready for a good laugh. The one who always has my back. Craziest person!</p>
+        </div>
+        <div class="family-card">
+            <img src="images/nenek.jpg" alt="Grandma">
+            <h3>Grandma</h3>
+            <p>My<sub> Grandmother</sub> is our storyteller! A gentle spirit with a fierce heart. My favourite grandmother!</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Brought to you with ❤️ by 1 and only Nicky</p>
+        <p class="copyright">© 2024 All rights reserved.</p>
+        <div class="social-icons">
+        </div>
+    </footer>
+	<!-- Clock Section -->
+    <div class="clock-container" id="clock"></div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>

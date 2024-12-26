@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #ffcba4;
+            color: white;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            animation: moveHeader 2s infinite alternate;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes moveHeader {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Hobby Section */
+        .scroll-section {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .scroll-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fbab60;
+            color: white;
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Split Layout Hero Section */
+        .split-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        /* Biodata Table Section */
+        .biodata-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .biodata-table th, .biodata-table td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 18px;
+            color: #ccc;
+            border-bottom: 1px solid #444;
+        }
+
+        .biodata-table th {
+            background-color: #fbab60;
+            color: white;
+        }
+
+        .biodata-table tr:hover {
+            background-color: #444;
+        }
+
+	   /* Audio Section */
+        .audio-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .audio-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffcba4;
+        }
+          /* Footer Styling */
+        footer {
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #779ecb;
+        }
+
+        /* Clock Box Styling */
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #fbab60;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Favorite Team Section */
+        .favorite-team {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .favorite-team img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .favorite-team h3 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="video/afiq.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header -->
+    <header>
+        <h1>Discover Who Nicky Is</h1>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="split-hero" id="about">
+        <div class="hero-content">
+            <!-- Biodata Table -->
+            <table class="biodata-table">
+                <tr>
+                    <th colspan="2">Journey of self-discovery</th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>Nik Muhammad Afiq Iman Bin Amran</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>7 December 2004</td>
+                </tr>
+                <tr>
+                    <th>Spot</th>
+                    <td>Selangor</td>
+                </tr>
+                <tr>
+                    <th>Favourite Movies</th>
+                    <td>A Walk To Remember</td>
+                </tr>
+                <tr>
+                    <th>Favourite Drinks</th>
+                    <td>
+                        <ol>
+                            <li>Matcha</li>
+                            <li>Jagung Iced</li>
+                            <li>Neslo Iced</li>
+                        </ol>
+                    </td>
+                </tr>
+	        <tr>
+                    <th>One of my skills</th>
+                    <td>I am insane from seeing</td>
+                </tr>
+
+                <tr>
+                    <th>Once said</th>
+                    <td> Time will either heal you or kill you</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="My Hobby" class="scroll-section">
+        <h2>My Hobbies</h2>
+        <div class="scroll-container">
+            <div class="card">
+                <h3>Football</h3>
+                <img src="images/football.jpg" alt="football" style="width: 100%; height: 83%; object-fit: cover; border-radius: 20px;">
+            </div>
+            <div class="card">
+                <h3>Boxing</h3>
+                <img src="images/boxing.jpg" alt="boxing" style="width: 100%; height: 83%; object-fit: cover; border-radius: 20px;">
+            </div>
+            <div class="card">
+                <h3>Swimming</h3>
+                <img src="images/swimming.jpg" alt="Swimming" style="width: 100%; height: 83%; object-fit: cover; border-radius: 20px;">
+            </div>
+            <div class="card">
+                <h3>Playing Guitar</h3>
+                <img src="images/guitar.jpg" alt="Guitar" style="width: 100%; height: 83%; object-fit: cover; border-radius: 20px;">
+            </div>
+        </div>
+    </section>
+
+   <!-- Favorite Team Section -->
+    <section class="favorite-team">
+        <h3>Favourite Club</h3>
+        <h3>The Most Legendary and Biggest Team: Arsenal</h3>
+        <img src="video/arsenal.mp4" alt="Favorite Team" style="border: 5px solid white; border-radius: 15px;">
+    </section>
+
+     <!-- Audio Section -->
+    <section class="audio-container">
+        <h2> Favourite 🎵</h2>
+        <audio controls autoplay loop>
+            <source src="audio/about you.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Brought to you with ❤️ by 1 and only Nicky</p>
+        <p class="copyright">© 2024 All rights reserved.</p>
+    </footer>
+
+    <!-- Clock Section -->
+    <div class="clock-container" id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

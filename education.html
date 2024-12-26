@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: ;
+            color: white;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Header Animation */
+        @keyframes moveHeader {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .biodata-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: moveHeader 3s infinite ease-in-out;
+        }
+
+        /* Table Styling */
+        .biodata-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .biodata-table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .biodata-table th {
+            padding: 15px;
+            background-color: #bcd4e6;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .biodata-table td {
+            padding: 20px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        .biodata-table td img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        /* Clock Box Styling */
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #bcd4e6;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        /* Footer Styling */
+        footer {
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #779ecb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="video/bada.mp4" type="video/mp4">
+    </video>
+
+    <section class="biodata-section">
+        <h1 class="biodata-title">My Education</h1>
+
+        <table class="biodata-table">
+            <tr>
+                <th>Image</th>
+                <th>Level</th>
+                <th>Year</th>
+                <th>Place</th>
+            </tr>
+            <tr>
+                <td><img src="images/tadika.jpg" alt="Learning Hobby"><br>Tadika</td>
+                <td> <li>Pre-school education</td>
+                <td> <li>2008-2009</td>
+                <td> <li>Tadika Senyum Manis</td>
+            </tr>
+            <tr>
+                <td><img src="images/la salle.jpg" alt="La salle"><br>Primary School</td>
+                <td> <abbr title=" Ujian Pencapaian Sekolah Rendah "> <li>[UPSR]. <abbr> </td>
+                <td> <li>2010-2016</td>
+                <td> <li>SK La Salle Sentul</td>
+            </tr>
+            <tr>
+                <td><img src="images/smk.jpg" alt="Seri Gombak"><br>Secondary School</td>
+                <td> <abbr title="Sijil Pelajaran Malaysia"><li> [SPM]. <abbr> </td>
+                <td> <li>2017-2022</td>
+                <td> <li>SMK Seri Gombak</td>
+            </tr>
+            <tr>
+                <td><img src="images/uitm.jpg" alt="UITM"><br>University</td>
+                <td> <li>Diploma of Information Management</td>
+                <td> <li>2022-2024</td>
+                <td> <li>UiTM Segamat Johor</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Brought to you with ❤️ by 1 and only Nicky</p>
+        <p class="copyright">© 2024 All rights reserved.</p>
+        <div class="social-icons">
+        </div>
+    </footer>
+	<!-- Clock Section -->
+    <div class="clock-container" id="clock"></div>
+     <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Header Animation */
+        @keyframes moveHeader {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            animation: moveHeader 2s infinite ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #0072bb;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #0072bb;
+        }
+
+        /* Button Container Styling */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;  /* Adjusts space between content and button */
+        }
+
+        /* Button Styling */
+        .home-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #4169e1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            text-align: center;  /* Center the text */
+        }
+
+        .home-button:hover {
+            background-color: #1e90ff;
+        }
+	/* Clock Box Styling */
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #0072bb;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="video/sky.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header -->
+    <header>
+        <h1>Experience</h1>
+    </header>
+
+    <!-- Overview -->
+    <section>
+        <h2>Tasks Given</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/PC.jpg" alt="Dismantle PC">
+                <p>Dismantle PC</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/LAN.jpg" alt="Install LAN cable">
+                <p>Install LAN cable</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/print.jpg" alt="Download Printer">
+                <p>Download Printer</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/wifi.jpg" alt="Wifi">
+                <p>Check Wifi Connection</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/ware.jpg" alt="PC Maintenance">
+                <p>PC Maintenance</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/data.jpg" alt="Data Input">
+                <p>Inputting Data</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section>
+        <h2>Key Moments</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/intern.jpg" alt="Celebration">
+                <p>Celebrating</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/sport.jpg" alt="Event Participation">
+                <p>Merdeka Events</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/event.jpg" alt="Team Bonding">
+                <p>Activities</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/cake.jpg" alt="Team">
+                <p>Celebrating pt2</p>
+            </div>
+        </div>
+
+        <!-- Centered Button -->
+        <div class="button-container">
+            <button class="home-button" onclick="window.location.href='index.html'">Back to Homepage</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Brought to you with ❤️ by 1 and only Nicky</p>
+        <p class="copyright">© 2024 All rights reserved.</p>
+    </footer>
+    <!-- Clock Section -->
+    <div class="clock-container" id="clock"></div>
+     <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>

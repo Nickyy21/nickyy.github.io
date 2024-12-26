@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* Body Styling */
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background: #779ecb;
+            color: white;
+        }
+		/* Video Background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the video */
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensures the video covers the viewport */
+            z-index: -1;
+	}
+        /* Gallery Section Styling */
+        #gallery {
+            padding: 50px 20px;
+            text-align: center; 
+            
+        }
+
+        /* Moving Text Animation */
+        @keyframes moveText {
+            0% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(-10px); }
+        }
+
+        #gallery h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+            animation: moveText 3s infinite; /* Title Animation */
+        }
+
+        #gallery p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: white;
+            animation: moveText 3s infinite alternate; /* Description Animation */
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px; /* Sets the max width for the grid */
+        }
+
+        /* Gallery Items */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 300px; /* Ensures consistent height for all items */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fits the container without distortion */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Adds zoom effect to the image */
+        }
+
+        /* Gallery Captions */
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1; /* Makes the caption visible on hover */
+            transform: translateY(0); /* Slide up effect */
+        }
+
+        /* Footer Styling */
+        footer {s
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            margin-top: 10px;
+            color: white;
+        }
+	/* Clock Box Styling */
+        .clock-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color:#989898;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+	/* Footer Styling */
+        footer {
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #779ecb;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="video/water.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Behind The Lens</h2>
+        <p> Sometimes you will never know the true value of a moment until it becomes a memory. </p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+    <img src="images/futbol.jpg" alt="Gallery Image 1">
+    <div class="gallery-caption">Futbol</div>
+</div>
+<div class="gallery-item">
+    <img src="images/family.jpg" alt="Gallery Image 2">
+    <div class="gallery-caption">My Family</div>
+</div>
+<div class="gallery-item">
+    <img src="images/night.jpg" alt="Gallery Image 3">
+    <div class="gallery-caption">Special Day</div>
+</div>
+<div class="gallery-item">
+    <img src="images/guitarr.jpg" alt="Gallery Image 4">
+    <div class="gallery-caption">My First Guitar</div>
+</div>
+<div class="gallery-item">
+    <img src="images/view.jpg" alt="Gallery Image 5">
+    <div class="gallery-caption">Serene Sunset</div>
+</div>
+<div class="gallery-item">
+    <img src="images/boys class a.jpg" alt="Gallery Image 6">
+    <div class="gallery-caption">Class A Boys</div>
+</div>
+<div class="gallery-item">
+    <img src="images/small nik.jpg" alt="Gallery Image 7">
+    <div class="gallery-caption">Mini Nicky</div>
+</div>
+<div class="gallery-item">
+    <img src="images/parents.jpg" alt="Gallery Image 8">
+    <div class="gallery-caption">My Parents</div>
+</div>
+<div class="gallery-item">
+    <img src="images/para.jpg" alt="Gallery Image 9">
+    <div class="gallery-caption">Team Para</div>
+</div>
+<div class="gallery-item">
+    <img src="images/keli.jpg" alt="Gallery Image 10">
+    <div class="gallery-caption">Keliii</div>
+</div>
+<div class="gallery-item">
+    <img src="images/coco.jpg" alt="Gallery Image 11">
+    <div class="gallery-caption">My Coco</div>
+</div>
+<div class="gallery-item">
+    <img src="images/pd.jpg" alt="Gallery Image 12">
+    <div class="gallery-caption">Good day</div>
+</div>
+<div class="gallery-item">
+    <img src="images/kiddo.jpg" alt="Gallery Image 13">
+    <div class="gallery-caption">One Sunny Day</div>
+</div>
+<div class="gallery-item">
+    <img src="images/father.jpg" alt="Gallery Image 14">
+    <div class="gallery-caption">Big Boss</div>
+</div>
+<div class="gallery-item">
+    <img src="images/oziz.jpg" alt="Gallery Image 15">
+    <div class="gallery-caption">Oziz's First Thumbs Up</div>
+</div>
+<div class="gallery-item">
+    <img src="images/bike.jpg" alt="Gallery Image 16">
+    <div class="gallery-caption">love</div>
+</div>
+<div class="gallery-item">
+    <img src="images/selangor.jpg" alt="Gallery Image 17">
+    <div class="gallery-caption">Selangor no surrender</div>
+</div>
+<div class="gallery-item">
+    <img src="images/love.jpg" alt="Gallery Image 18">
+    <div class="gallery-caption">Love</div>
+</div>
+<div class="gallery-item">
+    <img src="images/fam.jpg" alt="Gallery Image 19">
+    <div class="gallery-caption">hihi</div>
+</div>
+<div class="gallery-item">
+    <img src="images/sel.jpg" alt "Gallery Image 20">
+     <div class="gallery-caption">footballll</div>
+        </div>
+	<div class="gallery-item">
+            <img src="images/trio.jpg" alt="Gallery Image 21">
+            <div class="gallery-caption"></div>
+        </div>
+	<div class="gallery-item">
+            <img src="images/sad.jpg" alt="Gallery Image 22">
+            <div class="gallery-caption">Thousand words</div>
+        </div>
+	<div class="gallery-item">
+            <img src="images/kaki.jpg" alt="Gallery Image 23">
+            <div class="gallery-caption">Fav moments..</div>
+        </div>
+	<div class="gallery-item">
+            <img src="images/weng.jpg" alt="Gallery Image 24">
+            <div class="gallery-caption">Intern</div>
+        </div>
+    </footer>
+    <!-- Clock Section -->
+    <div class="clock-container" id="clock"></div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
