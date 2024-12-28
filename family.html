@@ -15,10 +15,11 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Centers the video */
+            transform: translate(-50%, -50%);
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Ensures the video covers the viewport */
+            height: auto;
+            min-height: 100%; /* Ensures full coverage */
+            object-fit: cover;
             z-index: -1;
         }
 
@@ -84,7 +85,8 @@
             transform: scale(1.05);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
-	/* Clock Box Styling */
+
+        /* Clock Box Styling */
         .clock-container {
             position: fixed;
             bottom: 20px;
@@ -97,7 +99,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-
 
         /* Footer Section */
         footer {
@@ -148,37 +149,35 @@
 
     <!-- Family Members Section -->
     <section class="family-section">
-        <!-- Example Card for Each Family Member -->
         <div class="family-card">
             <img src="images/dad.jpg" alt="Dad">
             <h3>Dad</h3>
-            <p>Meet my <sub>father</sub>! He is the best father in the world. Strong yet gentle. A true role model!</p>
+            <p>Meet my father! He is the best father in the world. Strong yet gentle. A true role model!</p>
         </div>
         <div class="family-card">
             <img src="images/mom.jpg" alt="Mom">
             <h3>Mom</h3>
-            <p>This is my <sub>mother</sub>!. My biggest supporter and cheerleader. She's the heart of our family. The best mother of all time. Always there with open arms.</p>
+            <p>My mother, my biggest supporter and cheerleader. She’s the heart of our family!</p>
         </div>
         <div class="family-card">
             <img src="images/bey.jpg" alt="Sibling">
-            <h3>Old Brother</h3>
-            <p>My <sub>Brother</sub>! Always ready for a good laugh. The one who always has my back. Craziest person!</p>
+            <h3>Older Brother</h3>
+            <p>My brother, always ready for a good laugh. He’s the one who always has my back!</p>
         </div>
         <div class="family-card">
             <img src="images/nenek.jpg" alt="Grandma">
             <h3>Grandma</h3>
-            <p>My<sub> Grandmother</sub> is our storyteller! A gentle spirit with a fierce heart. My favourite grandmother!</p>
+            <p>My grandmother is our storyteller, with a gentle spirit and a fierce heart.</p>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>Brought to you with ❤️ by 1 and only Nicky</p>
+        <p>Brought to you with ❤️ by the one and only Nicky</p>
         <p class="copyright">© 2024 All rights reserved.</p>
-        <div class="social-icons">
-        </div>
     </footer>
-	<!-- Clock Section -->
+
+    <!-- Clock Section -->
     <div class="clock-container" id="clock"></div>
     <script>
         function updateClock() {
@@ -186,12 +185,12 @@
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
         }
 
         setInterval(updateClock, 1000);
         updateClock();
     </script>
-
 </body>
 </html>
+
